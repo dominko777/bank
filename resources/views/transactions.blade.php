@@ -1,13 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<?php
 
-use App\Transaction;
-$yesterdayDate = date('Y-m-d', strtotime("yesterday"));
-$transaction = new Transaction();
-echo $totalSum = Transaction::whereDate('updated_at', '=', $yesterdayDate)->sum('amount');
-?>
     @if (count($transactions) > 0)
         <div class="panel panel-default">
             <div class="panel-heading">
